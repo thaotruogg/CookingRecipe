@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "984597979580",
+    "firebase_url": "https://cooking-recipe-7a71c.firebaseio.com",
+    "project_id": "cooking-recipe-7a71c",
+    "storage_bucket": "cooking-recipe-7a71c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984597979580:android:8c3fc4ee276bb6f680cbb9",
+        "android_client_info": {
+          "package_name": "com.thaotruogg.cookingrecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984597979580-s0tciajhmv9lf07efftgjemhas09ecdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA078CqUMetLmrVWJ7iym1fjmjuo1el_xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984597979580-s0tciajhmv9lf07efftgjemhas09ecdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984597979580:android:7d76ebb6269e067180cbb9",
+        "android_client_info": {
+          "package_name": "com.thaotruogg.cookingrecipemaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984597979580-4oaeniakmhdopgpqpcfnjjcffnhar8fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thaotruogg.cookingrecipemaster",
+            "certificate_hash": "7e7d1f11384707585156c21b1bc28f86385d00ab"
+          }
+        },
+        {
+          "client_id": "984597979580-s0tciajhmv9lf07efftgjemhas09ecdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA078CqUMetLmrVWJ7iym1fjmjuo1el_xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984597979580-s0tciajhmv9lf07efftgjemhas09ecdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
