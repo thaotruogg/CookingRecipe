@@ -2,6 +2,7 @@ package com.thaotruogg.cookingrecipe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import android.widget.ProgressBar;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseRecyclerAdapter<Foods, FoodViewHolder> searchAdapter;
     SwipeRefreshLayout refreshLayout;
     ProgressBar progressBar;
+    FloatingActionButton actionButton;
+
+    Toolbar toolbar;
 
     @Override
     protected void onStart() {
@@ -48,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        progressBar = findViewById(R.id.progress_circular);
+        toolbar = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
 
+        actionButton = findViewById(R.id.btn_category);
+        progressBar = findViewById(R.id.progress_circular);
         mResultList = findViewById(R.id.result_list);
         mResultList.setHasFixedSize(true);
         mResultList.setLayoutManager(new LinearLayoutManager(this));
@@ -64,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
             public void onRefresh() {
                 loadingData();
                 refreshLayout.setRefreshing(false);
+            }
+        });
+
+        actionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -107,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadingData(){
-        progressBar.setVisibility(View.GONE);
         options = new FirebaseRecyclerOptions.Builder<Foods>().setQuery(databaseReference, Foods.class).build();
 
         adapter = new FirebaseRecyclerAdapter<Foods, FoodViewHolder>(options) {
@@ -167,25 +182,4 @@ public class MainActivity extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menuItem);
     }
-
-//    public void loadingAllFood(){
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if(!dataSnapshot.exists()){
-//                    foodsArrayList = new ArrayList<>();
-//                    for(DataSnapshot ds : dataSnapshot.getChildren()){
-//                        foodsArrayList.add(ds.getValue(Foods.class));
-//                    }
-//                    AdapterFood adapterFood = new AdapterFood(foodsArrayList);
-//                    mResultList.setAdapter(adapterFood);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
 }

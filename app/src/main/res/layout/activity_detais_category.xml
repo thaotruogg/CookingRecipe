@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CookingActivity">
+    tools:context=".DetaisCategoryActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/toolbar_cooking_layout"
+        android:id="@+id/toolbar_details_category_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_cooking"
+            android:id="@+id/toolbar_detail_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
@@ -23,7 +23,7 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <ImageButton
-                android:id="@+id/btn_back_cooking"
+                android:id="@+id/btn_back_details_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -33,7 +33,7 @@
                 android:src="@drawable/ic_navigate_before_white_24dp" />
 
             <TextView
-                android:id="@+id/menu_cooking"
+                android:id="@+id/menu_details_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
@@ -46,29 +46,11 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/result_thuc_hien"
+        android:id="@+id/result_detais_category"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_cooking_layout"
-        app:layout_constraintBottom_toTopOf="@+id/btn_complete"
-        android:layout_marginBottom="16dp"/>
-
-
-    <Button
-        android:id="@+id/btn_complete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_bold"
-        android:background="@drawable/shadow_layout"
-        android:textColor="@color/colorBackground"
-        android:text="@string/hoan_thanh"
-        android:paddingStart="42dp"
-        android:paddingEnd="42dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_details_category_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

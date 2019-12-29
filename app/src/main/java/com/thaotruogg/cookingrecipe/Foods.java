@@ -1,7 +1,7 @@
 package com.thaotruogg.cookingrecipe;
 
 public class Foods {
-    private String id, title, image, level, nglieuchinh;
+    private String id, title, image, level, nglieuchinh, categry;
     private int time, khauphan;
 
     public Foods(){}
@@ -14,6 +14,14 @@ public class Foods {
         this.time = time;
         this.nglieuchinh = nglieuchinh;
         this.khauphan = khauphan;
+    }
+
+    public String getCategry() {
+        return categry;
+    }
+
+    public void setCategry(String categry) {
+        this.categry = categry;
     }
 
     public int getTime() {

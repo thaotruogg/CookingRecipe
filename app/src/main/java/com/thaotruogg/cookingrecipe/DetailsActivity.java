@@ -2,6 +2,7 @@ package com.thaotruogg.cookingrecipe;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -28,8 +30,10 @@ public class DetailsActivity extends AppCompatActivity {
     FirebaseRecyclerAdapter<NguyenLieu, NguyenLieuViewHolder> adapter;
     ArrayList<NguyenLieu> arrayList;
 
-    TextView tvTitle, tvTime, tvLevel, tvKhauPhan;
+    TextView tvTitle, tvTime, tvLevel, tvKhauPhan, menuTitle;
     Button btnCooking;
+    Toolbar toolbar;
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,18 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
-        this.setTitle(title);
+//        this.setTitle(title);
+        toolbar = findViewById(R.id.toolbar_details);
+        menuTitle = findViewById(R.id.menu_title);
+        menuTitle.setText(title);
+        imageButton = findViewById(R.id.btn_back_details);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         //tvTitle.setText(title);
         tvTime.setText(String.format("%s phút", time));
         tvLevel.setText(level);
