@@ -24,7 +24,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
-    ArrayList<Foods> foodsArrayList;
+//    ArrayList<Foods> foodsArrayList;
     FirebaseRecyclerOptions<Category> options;
     FirebaseRecyclerAdapter<Category, CategoryViewHolder> adapter;
     Toolbar toolbar;
